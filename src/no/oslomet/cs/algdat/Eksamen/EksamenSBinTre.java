@@ -4,8 +4,8 @@ package no.oslomet.cs.algdat.Eksamen;
 import java.util.*;
 
 public class EksamenSBinTre<T> {
-    public static void main (String args[]) {
-        Integer[] a = {1};
+    public static void main(String args[]) {
+        Integer[] a = {1, 2, 5, 2, 1, 5, 5, 7, 9, 4};
         EksamenSBinTre<Integer> tre = new EksamenSBinTre<>(Comparator.naturalOrder());
         for (int verdi : a) tre.leggInn(verdi);
         System.out.println(tre.antall()); // Utskrift: 10
@@ -103,11 +103,13 @@ public class EksamenSBinTre<T> {
             p = cmp < 0 ? p.venstre : p.høyre;
         }
 
+        p = new Node<>(verdi, q);
+
         if (q == null) rot = p;
         else if (cmp < 0) q.venstre = p;
         else q.høyre = p;
 
-        antall ++;
+        antall++;
         return true;
     }
 
@@ -124,10 +126,17 @@ public class EksamenSBinTre<T> {
         Node<T> p = rot;
         while (p != null) {
             int cmp = comp.compare(verdi, p.verdi);
-            if (verdi == p.verdi) {
-                like ++;
-
+            if (cmp < 0) {
+                p = p.venstre;
             }
+            if (cmp > 0) {
+                p = p.høyre;
+            }
+            if (cmp == 0) {
+                like++;
+                p = p.høyre;
+            }
+
         }
         return like;
     }
