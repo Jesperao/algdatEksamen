@@ -146,11 +146,22 @@ public class EksamenSBinTre<T> {
     }
 
     private static <T> Node<T> førstePostorden(Node<T> p) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+        while (true) {
+            if (p.venstre != null) p = p.venstre;
+            else if (p.høyre != null) p = p.høyre;
+            else return p;
+        }
     }
 
     private static <T> Node<T> nestePostorden(Node<T> p) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+       if(p.forelder == null) return null;
+       else if(p == p.forelder.høyre) p = p.forelder;
+       else if(p == p.forelder.venstre) {
+           if(p.forelder.høyre == null) p = p.forelder;
+           else if(p.forelder.høyre != null) p = p.forelder.høyre;
+       }
+       return p;
     }
 
     public void postorden(Oppgave<? super T> oppgave) {
