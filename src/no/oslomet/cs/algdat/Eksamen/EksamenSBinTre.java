@@ -4,16 +4,6 @@ package no.oslomet.cs.algdat.Eksamen;
 import java.util.*;
 
 public class EksamenSBinTre<T> {
-    public static void main(String args[]) {
-        Integer[] a = {1, 2, 5, 2, 1, 5, 5, 7, 9, 4};
-        EksamenSBinTre<Integer> tre = new EksamenSBinTre<>(Comparator.naturalOrder());
-        for (int verdi : a) tre.leggInn(verdi);
-        System.out.println(tre.antall()); // Utskrift: 10
-        System.out.println(tre.antall(1)); // Utskrift: 0
-        System.out.println(tre.antall(4)); // Utskrift: 3
-        System.out.println(tre.antall(7)); // Utskrift: 2
-        System.out.println(tre.antall(10)); // Utskrift: 1
-    }
 
     private static final class Node<T>   // en indre nodeklasse
     {
@@ -203,7 +193,19 @@ public class EksamenSBinTre<T> {
     }
 
     public ArrayList<T> serialize() {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        if (tom()) return null;
+
+        ArrayList<T> list = new ArrayList<>();
+        Queue<Node<T>> queue = new ArrayDeque<>();
+        queue.add(rot);
+
+        while (!queue.isEmpty()) {
+            Node<T> p = queue.remove();
+
+            if (p.venstre != null) queue.add(p.venstre);
+            if (p.høyre != null) queue.add(p.høyre);
+        }
+        return list;
     }
 
     static <K> EksamenSBinTre<K> deserialize(ArrayList<K> data, Comparator<? super K> c) {
