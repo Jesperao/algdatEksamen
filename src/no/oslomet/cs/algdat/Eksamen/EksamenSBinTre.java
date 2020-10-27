@@ -202,6 +202,8 @@ public class EksamenSBinTre<T> {
         while (!queue.isEmpty()) {
             Node<T> p = queue.remove();
 
+            list.add(p.verdi);
+
             if (p.venstre != null) queue.add(p.venstre);
             if (p.høyre != null) queue.add(p.høyre);
         }
