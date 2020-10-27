@@ -155,13 +155,14 @@ public class EksamenSBinTre<T> {
     }
 
     private static <T> Node<T> nestePostorden(Node<T> p) {
-       if(p.forelder == null) return null;
-       else if(p == p.forelder.høyre) p = p.forelder;
-       else if(p == p.forelder.venstre) {
-           if(p.forelder.høyre == null) p = p.forelder;
-           else if(p.forelder.høyre != null) p = p.forelder.høyre;
-       }
-       return p;
+        if (p.forelder == null) return null;
+        if (p == p.forelder.høyre) p = p.forelder;
+        else {
+            if (p.forelder.høyre == null) p = p.forelder;
+            else p = p.forelder.høyre;
+
+        }
+        return p;
     }
 
     public void postorden(Oppgave<? super T> oppgave) {
