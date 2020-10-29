@@ -82,6 +82,7 @@ public class EksamenSBinTre<T> {
     }
 
     public boolean leggInn(T verdi) {
+        //Henter kode fra kompendiet
         Objects.requireNonNull(verdi, "Nullverdier er ikke tillat");
 
         Node<T> p = rot, q = null;
@@ -228,12 +229,11 @@ public class EksamenSBinTre<T> {
     private void postordenRecursive(Node<T> p, Oppgave<? super T> oppgave) {
         if (p.venstre != null) postordenRecursive(p.venstre, oppgave);
         if (p.høyre != null) postordenRecursive(p.høyre, oppgave);
-
         oppgave.utførOppgave(p.verdi);
     }
 
     public ArrayList<T> serialize() {
-        if (tom()) return null;
+        if (tom()) return null; //Returner null hvis tom
 
         ArrayList<T> list = new ArrayList<>();
         Queue<Node<T>> queue = new ArrayDeque<>();
