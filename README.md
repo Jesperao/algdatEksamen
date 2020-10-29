@@ -22,3 +22,10 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
 nestePostorden sjekker om forelder til peker er null, hvis den er det så er peker på rotnoden og traverseringen av treet er ferdig. Ellers så bruker jeg kriteriene for postorden fra kompentiet for å lage if setninger som sjekker hvilken node som er neste.
 * Oppgave 4: I metoden postorden bruker jeg førstePostorden metoden til å finne første node i postorden, derretter setter jeg opp en while løkke som kaller på nestepostorden så lenge p ikke er like null. PostordenRecursive traverserer også treet på postorden, men den kaller på seg selv får å bevege seg gjennom treet.
 * Oppgave 5: 
+
+# Warnings
+Det er 5 warnings jeg ikke får gjort noe med som gjenstår.
+* Linje 12 og 179 er det bruk av non-ASCII symbol.
+* Linje 36 er antall instansiert men blir adri brukt.
+* Linje 47 er public boolean inneholder aldri brukt.
+* Linje 84 er det warning for at returverdien til public boolean leggInn ikke blir tatt i bruk, og kan ikke returnere void uten å forande på metoden.
