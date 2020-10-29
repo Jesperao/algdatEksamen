@@ -8,7 +8,7 @@ public class EksamenSBinTre<T> {
     private static final class Node<T>   // en indre nodeklasse
     {
         private T verdi;                   // nodens verdi
-        private Node<T> venstre, høyre;    // venstre og høyre barn
+        private Node<T> venstre, høyre;    // venstre og høyre barn. Warning for non-ASCII symbol
         private Node<T> forelder;          // forelder
 
         // konstruktør
@@ -33,7 +33,7 @@ public class EksamenSBinTre<T> {
 
     private Node<T> rot;                            // peker til rotnoden
     private int antall;                             // antall noder
-    private int endringer;                          // antall endringer
+    private int endringer;                          // antall endringer.
 
     private final Comparator<? super T> comp;       // komparator
 
@@ -44,7 +44,7 @@ public class EksamenSBinTre<T> {
         comp = c;
     }
 
-    public boolean inneholder(T verdi) {
+    public boolean inneholder(T verdi) { //Warning for at metode inneholder ikke blir brukt.
         if (verdi == null) return false;
 
         Node<T> p = rot;
@@ -81,7 +81,7 @@ public class EksamenSBinTre<T> {
         return antall == 0;
     }
 
-    public boolean leggInn(T verdi) {
+    public boolean leggInn(T verdi) { //Warning for at returverdi ikke blir brukt, men kan ikke returnere void.
         //Henter kode fra kompendiet
         Objects.requireNonNull(verdi, "Nullverdier er ikke tillat");
 
@@ -176,7 +176,7 @@ public class EksamenSBinTre<T> {
         while (!tom()) fjernAlle(rot.verdi);
     }
 
-    private static <T> Node<T> førstePostorden(Node<T> p) {
+    private static <T> Node<T> førstePostorden(Node<T> p) { //Warning for bruk av non-ASCII symbol
 
         while (true) {
             if (p.venstre != null) p = p.venstre;
