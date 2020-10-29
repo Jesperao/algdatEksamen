@@ -16,5 +16,6 @@ Se oblig-tekst for alle krav, og husk spesielt på følgende:
 
 Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, og hver logg-melding beskriver det jeg har gjort av endringer.
 
-* Oppgave 1: Løste ved å implementere ...
-* Oppgave 2: ...
+* Oppgave 1: hentet program kode 5.2.3 a) fra kompendiet og gitt ut ifra det for å kode resten av oppgaven.
+* Oppgave 2: deklarerer antall like vedier som int like = 0. cmp sammenligner innsatt verdi med p.verdi, hvis innsatt verdi er mindre enn p.verdi blir p til venstrebarnet. er innsatt verdi større enn p.verdi blir p til høyre barn og hvis innsatt verdi er lik p.verdi teller like og p blir til høyrebarnet.
+* Oppgave 3:
