@@ -27,7 +27,7 @@ For fjernAlle metoden har jeg fått hjelp fra løsningsforslag til oppgave 3 i a
 
 # Warnings
 Det er 5 warnings jeg ikke får gjort noe med som gjenstår.
-* Linje 12 og 179 er det bruk av non-ASCII symbol.
+* Linje 11 og 179 er det bruk av non-ASCII symbol.
 * Linje 36 er antall instansiert men blir adri brukt.
 * Linje 47 er public boolean inneholder aldri brukt.
 * Linje 84 er det warning for at returverdien til public boolean leggInn ikke blir tatt i bruk, og kan ikke returnere void uten å forande på metoden.
