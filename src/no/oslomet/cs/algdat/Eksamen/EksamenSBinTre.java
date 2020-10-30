@@ -233,6 +233,7 @@ public class EksamenSBinTre<T> {
     }
 
     public ArrayList<T> serialize() {
+        //programkode 5.1.6 i kompendiet
         if (tom()) return null; //Returner null hvis tom
 
         ArrayList<T> list = new ArrayList<>();
@@ -251,6 +252,7 @@ public class EksamenSBinTre<T> {
     }
 
     static <K> EksamenSBinTre<K> deserialize(ArrayList<K> data, Comparator<? super K> c) {
+        //Programkode 5.2.3 i kompendiet.
         EksamenSBinTre<K> tre = new EksamenSBinTre<>(c);
         data.forEach(tre::leggInn);
         return tre;
