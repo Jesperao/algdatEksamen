@@ -23,7 +23,7 @@ nestePostorden sjekker om forelder til peker er null, hvis den er det så er pek
 * Oppgave 4: I metoden postorden bruker jeg førstePostorden metoden til å finne første node i postorden, derretter setter jeg opp en while løkke som kaller på nestepostorden så lenge p ikke er like null. PostordenRecursive traverserer også treet på postorden, men den kaller på seg selv får å bevege seg gjennom treet.
 * Oppgave 5: Starter ved å oppette arraylisten som verdiene skal settes inn i og en kø, og rotnoden legges inn i køen. Deretter brukes en whileløkke for å legge til verdiene som er i køen inn i en arraylist, for å så traversere gjennom treet og legge til nye verdier i køen. whileløkken fjerner også de verdiene som blir tatt ut.
 * Oppgave 6: For metoden public boolean fjern, ser jeg på programkode 5.2.8 d) som nevnt i oppgaven. jeg har lagt til en if setning som korrekt håndterer foreldre peker under fjerning.
-For fjernAlle metoden har jeg fått hjelp fra løsningsforslag til oppgave 3 i avsnitt 5.2.8 i kompendiet.
+For fjernAlle metoden har jeg fått hjelp fra løsningsforslag til oppgave 3 i avsnitt 5.2.8 i kompendiet. fjern>Alle metoden bruker fjern metoden så lenge en forekomst av verdien finnes, det er en teller som teller antall forekomster av verdi som har blitt slettet.
 
 # Warnings
 Det er 5 warnings jeg ikke får gjort noe med som gjenstår.
